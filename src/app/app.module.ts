@@ -5,10 +5,17 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
-import { AngularFireModule, FirebaseAppConfig } from 'angularfire2'
+import { AngularFireModule, FirebaseAppConfig } from 'angularfire2';
+import { AngularFireDatabase } from 'angularfire2/database';
 
+//Pages
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { SignupPage } from './../pages/signup/signup';
+import { SignupInstituicaoPage } from './../pages/signup-instituicao/signup-instituicao';
+
+//Providers
+import { DoadorService } from './../providers/doador.service';
 
 const fireBaseConfig: FirebaseAppConfig = {
   apiKey: "AIzaSyApaL629_F2KgOnH7Im55xMmoI-o-sIiik",
@@ -22,7 +29,9 @@ const fireBaseConfig: FirebaseAppConfig = {
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    SignupPage,
+    SignupInstituicaoPage
   ],
   imports: [
     BrowserModule,
@@ -33,11 +42,15 @@ const fireBaseConfig: FirebaseAppConfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    SignupPage,
+    SignupInstituicaoPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    DoadorService,
+    AngularFireDatabase,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
