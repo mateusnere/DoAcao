@@ -6,7 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { AngularFireModule, FirebaseAppConfig } from 'angularfire2';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 //Pages
 import { MyApp } from './app.component';
@@ -16,6 +16,8 @@ import { SignupInstituicaoPage } from './../pages/signup-instituicao/signup-inst
 
 //Providers
 import { DoadorService } from './../providers/doador.service';
+import { AuthService } from '../providers/auth.service';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 const fireBaseConfig: FirebaseAppConfig = {
   apiKey: "AIzaSyApaL629_F2KgOnH7Im55xMmoI-o-sIiik",
@@ -37,6 +39,8 @@ const fireBaseConfig: FirebaseAppConfig = {
     BrowserModule,
     HttpModule,
     AngularFireModule.initializeApp(fireBaseConfig),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -50,7 +54,7 @@ const fireBaseConfig: FirebaseAppConfig = {
     StatusBar,
     SplashScreen,
     DoadorService,
-    AngularFireDatabase,
+    AuthService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
