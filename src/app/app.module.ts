@@ -13,11 +13,14 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SignupPage } from './../pages/signup/signup';
 import { SignupInstituicaoPage } from './../pages/signup-instituicao/signup-instituicao';
+import { DoadorPage } from './../pages/doador/doador';
+import { InstituicaoPage } from './../pages/instituicao/instituicao';
 
 //Providers
 import { DoadorService } from './../providers/doador.service';
-import { AuthService } from '../providers/auth.service';
+import { AuthService } from './../providers/auth.service';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { InstituicaoSevice } from './../providers/instituicao.service';
 
 const fireBaseConfig: FirebaseAppConfig = {
   apiKey: "AIzaSyApaL629_F2KgOnH7Im55xMmoI-o-sIiik",
@@ -33,7 +36,9 @@ const fireBaseConfig: FirebaseAppConfig = {
     MyApp,
     HomePage,
     SignupPage,
-    SignupInstituicaoPage
+    SignupInstituicaoPage,
+    DoadorPage,
+    InstituicaoPage
   ],
   imports: [
     BrowserModule,
@@ -48,12 +53,15 @@ const fireBaseConfig: FirebaseAppConfig = {
     MyApp,
     HomePage,
     SignupPage,
-    SignupInstituicaoPage
+    SignupInstituicaoPage,
+    DoadorPage,
+    InstituicaoPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     DoadorService,
+    InstituicaoSevice,
     AuthService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

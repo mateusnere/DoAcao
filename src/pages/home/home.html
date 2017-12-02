@@ -7,13 +7,25 @@
 </ion-header>
 
 <ion-content padding>
-  
-  <h1>DoAção</h1>
-
+  <div align="center">
+    <img src="../../assets/imgs/Logo_DoAcao.png"/>
+  </div>
+  <form [formGroup]="signinForm" (ngSubmit)="signin(); $event.preventDefault()">      
+    <ion-item>
+        <ion-icon name="mail" item-left></ion-icon>
+        <ion-input type="text" placeholder="Email" maxLength="30" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-icon name="lock" item-left></ion-icon>
+        <ion-input type="password" placeholder="Senha" maxLength="30" formControlName="password"></ion-input>
+    </ion-item>
+    <br/>
+    <button ion-button full type="submit" [disabled]="signinForm.invalid" color="secondary">Entrar</button>
+  </form>
   <ion-footer>
     <p align="center">Ainda não é cadastrado?</p>
-    <button ion-button block (click)="onSignUpDoador()" color="secondary">Cadastre-se como Doador</button>
+    <button ion-button full (click)="onSignUpDoador()" color="secondary">Cadastre-se como Doador</button>
     <br/>
-    <button ion-button block (click)="onSignUpInstituicao()" color="secondary">Cadastre-se como Instituição</button>
+    <button ion-button full (click)="onSignUpInstituicao()" color="secondary">Cadastre-se como Instituição</button>
   </ion-footer>
 </ion-content>
