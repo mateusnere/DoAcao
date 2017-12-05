@@ -15,6 +15,7 @@ import { SignupPage } from './../pages/signup/signup';
 import { SignupInstituicaoPage } from './../pages/signup-instituicao/signup-instituicao';
 import { DoadorPage } from './../pages/doador/doador';
 import { InstituicaoPage } from './../pages/instituicao/instituicao';
+import { MeusDadosPage } from './../pages/meus-dados/meus-dados';
 
 //Providers
 import { DoadorService } from './../providers/doador.service';
@@ -38,7 +39,8 @@ const fireBaseConfig: FirebaseAppConfig = {
     SignupPage,
     SignupInstituicaoPage,
     DoadorPage,
-    InstituicaoPage
+    InstituicaoPage,
+    MeusDadosPage
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,8 @@ const fireBaseConfig: FirebaseAppConfig = {
     SignupPage,
     SignupInstituicaoPage,
     DoadorPage,
-    InstituicaoPage
+    InstituicaoPage,
+    MeusDadosPage
   ],
   providers: [
     StatusBar,

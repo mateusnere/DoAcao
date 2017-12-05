@@ -23,7 +23,6 @@ export class DoadorService extends BaseService{
       (ref: firebase.database.Reference) => ref.orderByChild('email').equalTo(email)
     ).valueChanges()
     .map((doadores: Doador[]) => {
-      console.log("OIEEEEEEEE    "+doadores);
       return doadores.length > 0;
     }).catch(this.handleObservableError);
   }

@@ -67,6 +67,10 @@ export class HomePage {
     this.navCtrl.push(SignupInstituicaoPage);
   }
 
+  onLogout(): void {
+    this.authService.logout();
+  }
+
   private showLoading(): Loading {
     let loading: Loading = this.loadingCtrl.create({
       content: 'Please wait...'

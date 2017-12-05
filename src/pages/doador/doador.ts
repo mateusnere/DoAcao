@@ -8,8 +8,9 @@ import { Component } from '@angular/core';
 export class DoadorPage {
 
   constructor(
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     public navParams: NavParams) {
+      
   }
 
 }
