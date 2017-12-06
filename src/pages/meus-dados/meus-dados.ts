@@ -32,6 +32,7 @@ export class MeusDadosPage {
             if(instituicao){
               this.instituicao = instituicao;
               this.isDoador = false;
+              console.log(this.instituicao.razaoSocial);
             }
           });
         }

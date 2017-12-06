@@ -1,3 +1,4 @@
+import { CampanhaVisualizarPage } from './../pages/campanha/visualizar/campanha-visualizar';
 import { CampanhaService } from './../providers/campanha.service';
 import { AlertsService } from './../providers/alerts.service';
 import { CampanhaCadastroPage } from './../pages/campanha/cadastro/campanha-cadastro';
@@ -47,6 +48,7 @@ const fireBaseConfig: FirebaseAppConfig = {
     MeusDadosPage,
     CampanhaPage,
     CampanhaCadastroPage,
+    CampanhaVisualizarPage,
   ],
   imports: [
     BrowserModule,
@@ -67,6 +69,7 @@ const fireBaseConfig: FirebaseAppConfig = {
     MeusDadosPage,
     CampanhaPage,
     CampanhaCadastroPage,
+    CampanhaVisualizarPage,
   ],
   providers: [
     StatusBar,

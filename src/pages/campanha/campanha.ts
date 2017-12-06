@@ -1,10 +1,9 @@
-import { Observable } from 'rxjs';
+import { CampanhaVisualizarPage } from './visualizar/campanha-visualizar';
 import { Campanha } from './../../models/campanha';
 import { CampanhaService } from './../../providers/campanha.service';
 import { CampanhaCadastroPage } from './cadastro/campanha-cadastro';
 import { NavController, NavParams } from 'ionic-angular';
 import { Component } from '@angular/core';
-import { AngularFireList } from 'angularfire2/database';
 
 @Component({
   selector: 'page-campanha',
@@ -12,7 +11,7 @@ import { AngularFireList } from 'angularfire2/database';
 })
 export class CampanhaPage {
 
-  campanhas: Observable<Campanha[]>;
+  campanhas: Campanha[];
 
   constructor(
     public campanhaService: CampanhaService,
@@ -23,11 +22,17 @@ export class CampanhaPage {
   }
 
   ionViewDidLoad() {
-    this.campanhas = this.campanhaService.campanhas;
+    this.campanhaService.listAllCampanhas().valueChanges().subscribe((campanhas: Campanha[]) => {
+      this.campanhas = campanhas;
+    });
   }
 
   novaCampanha(): void {
     this.navCtrl.push(CampanhaCadastroPage);
+  }
+
+  visualizarCampanha(campanha: Campanha): void {
+    this.navCtrl.push(CampanhaVisualizarPage, {'campanhaVisualizar': campanha});
   }
 
 }

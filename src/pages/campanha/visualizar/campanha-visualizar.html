@@ -1,26 +1,40 @@
 <ion-header>
         
     <ion-navbar>
-    <ion-title>Cadastro de Campanha</ion-title>
+    <ion-title>Visualizar Campanha</ion-title>
     </ion-navbar>
 
 </ion-header>
 
 <ion-content padding>
-    <form [formGroup]="cadastroCampanhaForm" (ngSubmit)="cadastrar(); $event.preventDefault()">
-        <ion-item>
-            <ion-icon name="person" item-left></ion-icon>
-            <ion-input type="text" placeholder="Nome da campanha" maxLength="30" formControlName="nome"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-icon name="mail" item-left></ion-icon>
-            <ion-datetime displayFormat="DD/MM/YYYY" formControlName="data"></ion-datetime>
-        </ion-item>
-        <ion-item>
-            <ion-icon name="lock" item-left></ion-icon>
-            <ion-textarea rows="7" placeholder="Descrição" formControlName="descricao"></ion-textarea>
-        </ion-item>
-        <br/>
-        <button ion-button full type="submit" [disabled]="cadastroCampanhaForm.invalid" color="secondary">Enviar</button>
-    </form>
+    <ion-card>
+        <ion-card-content>
+            <ion-item-group>
+                <ion-item-divider color="secondary">
+                    CAMPANHA
+                </ion-item-divider>
+                <ion-item>{{campanha.nome}}</ion-item>
+                <ion-item>{{campanha.data}}</ion-item>
+                <ion-item>{{campanha.descricao}}</ion-item>
+            </ion-item-group>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-content>
+            <ion-item-group>
+                <button ion-button full (click)="editarCampanha()" color="secondary">
+                    Editar Dados
+                </button>
+            </ion-item-group>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-content>
+            <ion-item-group>
+                <button ion-button full (click)="removerCampanha()" color="danger">
+                    Remover Campanha
+                </button>
+            </ion-item-group>
+        </ion-card-content>
+    </ion-card>
 </ion-content>

@@ -1,10 +1,8 @@
-import { Observable } from 'rxjs/Observable';
 import { AuthService } from './../../providers/auth.service';
 import { Doador } from './../../models/doador';
 import { NavController, NavParams } from 'ionic-angular';
 import { Component } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
-import * as firebase from 'firebase/app';
 
 @Component({
   selector: 'page-doador',

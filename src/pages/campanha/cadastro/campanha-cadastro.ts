@@ -1,3 +1,4 @@
+import { Campanha } from './../../../models/campanha';
 import { AuthService } from './../../../providers/auth.service';
 import { CampanhaService } from './../../../providers/campanha.service';
 import { AlertsService } from './../../../providers/alerts.service';
@@ -13,6 +14,7 @@ import { Component } from '@angular/core';
 export class CampanhaCadastroPage {
 
     cadastroCampanhaForm: FormGroup;
+    campanha: Campanha;
 
     constructor(
         public authService: AuthService,
@@ -27,14 +29,14 @@ export class CampanhaCadastroPage {
             data: ['', Validators.required],
             descricao: ['', [Validators.required, Validators.minLength(5)]]
         });
+        this.campanha = new Campanha("","",new Date().toISOString(),"","");
     }
 
     cadastrar(): void {
         let loading: Loading = this.alertsService.showLoading();
-        let formCampanha = this.cadastroCampanhaForm.value;
-        formCampanha.idUser = this.authService.afAuth.auth.currentUser.uid;
-        formCampanha.uid = `${formCampanha.nome}_${formCampanha.data}`;
-        this.campanhaService.create(formCampanha)
+        this.campanha.idUser = this.authService.afAuth.auth.currentUser.uid;
+        this.campanha.uid = `${this.campanha.idUser}_${this.campanha.data.slice(0,10)}`;
+        this.campanhaService.create(this.campanha)
         .then(() => {
             loading.dismiss();
             this.navCtrl.pop();

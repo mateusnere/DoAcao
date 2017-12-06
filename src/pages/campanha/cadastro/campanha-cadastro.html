@@ -10,15 +10,15 @@
     <form [formGroup]="cadastroCampanhaForm" (ngSubmit)="cadastrar(); $event.preventDefault()">
         <ion-item>
             <ion-icon name="person" item-left></ion-icon>
-            <ion-input type="text" placeholder="Nome da campanha" maxLength="30" formControlName="nome"></ion-input>
+            <ion-input [(ngModel)]="campanha.nome" type="text" placeholder="Nome da campanha" maxLength="30" formControlName="nome"></ion-input>
         </ion-item>
         <ion-item>
-            <ion-icon name="mail" item-left></ion-icon>
-            <ion-datetime displayFormat="DD/MM/YYYY" formControlName="data"></ion-datetime>
+            <ion-icon name="calendar" item-left></ion-icon>
+            <ion-datetime [(ngModel)]="campanha.data" displayFormat="DD/MM/YYYY" formControlName="data"></ion-datetime>
         </ion-item>
         <ion-item>
             <ion-icon name="lock" item-left></ion-icon>
-            <ion-textarea rows="7" placeholder="Descrição" formControlName="descricao"></ion-textarea>
+            <ion-textarea [(ngModel)]="campanha.descricao" rows="7" placeholder="Descrição" formControlName="descricao"></ion-textarea>
         </ion-item>
         <br/>
         <button ion-button full type="submit" [disabled]="cadastroCampanhaForm.invalid" color="secondary">Enviar</button>

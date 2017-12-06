@@ -7,7 +7,6 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { BaseService } from './base.service';
 import 'rxjs/add/operator/map';
 import * as firebase from 'firebase/app';
-import { AngularFireObject } from 'angularfire2/database/interfaces';
 
 @Injectable()
 export class DoadorService extends BaseService{
