@@ -1,3 +1,4 @@
+import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
@@ -6,6 +7,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { BaseService } from './base.service';
 import 'rxjs/add/operator/map';
 import * as firebase from 'firebase/app';
+import { AngularFireObject } from 'angularfire2/database/interfaces';
 
 @Injectable()
 export class DoadorService extends BaseService{
@@ -13,9 +15,10 @@ export class DoadorService extends BaseService{
   doadores: Observable<Doador[]>;
 
   constructor(
+    public afAuth: AngularFireAuth,
     public angularFireDatabase: AngularFireDatabase,
     public http: Http) {
-      super();
+      super();      
   }
 
   doadorEmailAlreadyExists(email: string): Observable<boolean> {
@@ -32,4 +35,5 @@ export class DoadorService extends BaseService{
               .set(doador)
               .catch(this.handlePromiseError);
   }
+
 }

@@ -1,3 +1,4 @@
+import { CampanhaPage } from './../pages/campanha/campanha';
 import { HomePage } from './../pages/home/home';
 import { AuthService } from './../providers/auth.service';
 import { MeusDadosPage } from './../pages/meus-dados/meus-dados';
@@ -16,7 +17,7 @@ export class MyApp {
 
   public paginas = [
     {titulo: 'Meus Dados', componente: MeusDadosPage},
-    {titulo: 'Campanhas de Arrecadação', componente: 'teste'},
+    {titulo: 'Campanhas de Arrecadação', componente: CampanhaPage},
     {titulo: 'Eventos de Interação', componente: 'teste'}
   ];
 
@@ -25,7 +26,6 @@ export class MyApp {
       platform: Platform, 
       statusBar: StatusBar, 
       splashScreen: SplashScreen) {
-         
         platform.ready().then(() => {
         // Okay, so the platform is ready and our plugins are available.
         // Here you can do any higher level native things you might need.

@@ -1,0 +1,23 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Campanhas de Arrecadação</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item *ngFor="let campanha of campanhas | async" (click)="visualizarCampanha(campanha)">
+      {{campanha.nome}}
+    </button>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <button ion-button full (click)="novaCampanha()" color="secondary">
+    Nova Campanha
+  </button>
+  <br/><br/><br/><br/><br/>
+</ion-footer>

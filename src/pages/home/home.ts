@@ -73,7 +73,7 @@ export class HomePage {
 
   private showLoading(): Loading {
     let loading: Loading = this.loadingCtrl.create({
-      content: 'Please wait...'
+      content: 'Aguarde...'
     });
     loading.present();
     return loading;

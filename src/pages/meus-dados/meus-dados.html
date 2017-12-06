@@ -8,5 +8,20 @@
 
 
 <ion-content padding>
-  PÁGINA MEUS DADOS
+  <div *ngIf="isDoador">
+    <ion-card>
+      <ion-card-content>
+          <ion-item-group>
+            <ion-item-divider color="secondary">
+              DOADOR
+            </ion-item-divider>
+            <ion-item>{{doador.nome}}</ion-item>
+            <ion-item>{{doador.email}}</ion-item>
+          </ion-item-group>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div *ngIf="!isDoador">
+    Instituicao
+  </div>
 </ion-content>

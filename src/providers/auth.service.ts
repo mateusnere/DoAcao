@@ -13,7 +13,6 @@ export class AuthService extends BaseService{
 
   constructor(public http: Http, public afAuth: AngularFireAuth) {
     super();
-    console.log("Hello provider!");
   }
 
   createAuthUser(user: {email: string, password: string}): Promise<firebase.User> {

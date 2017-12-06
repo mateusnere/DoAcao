@@ -1,3 +1,7 @@
+import { CampanhaService } from './../providers/campanha.service';
+import { AlertsService } from './../providers/alerts.service';
+import { CampanhaCadastroPage } from './../pages/campanha/cadastro/campanha-cadastro';
+import { CampanhaPage } from './../pages/campanha/campanha';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -40,7 +44,9 @@ const fireBaseConfig: FirebaseAppConfig = {
     SignupInstituicaoPage,
     DoadorPage,
     InstituicaoPage,
-    MeusDadosPage
+    MeusDadosPage,
+    CampanhaPage,
+    CampanhaCadastroPage,
   ],
   imports: [
     BrowserModule,
@@ -58,7 +64,9 @@ const fireBaseConfig: FirebaseAppConfig = {
     SignupInstituicaoPage,
     DoadorPage,
     InstituicaoPage,
-    MeusDadosPage
+    MeusDadosPage,
+    CampanhaPage,
+    CampanhaCadastroPage,
   ],
   providers: [
     StatusBar,
@@ -66,6 +74,8 @@ const fireBaseConfig: FirebaseAppConfig = {
     DoadorService,
     InstituicaoSevice,
     AuthService,
+    AlertsService,
+    CampanhaService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
