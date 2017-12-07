@@ -55,7 +55,7 @@ export class HomePage {
       }).catch((error: any) => {
         console.log(error);
         loading.dismiss();
-        this.showAlert(error);
+        this.showAlert("Dados incorretos! Tente novamente!");
       })
   }
 
