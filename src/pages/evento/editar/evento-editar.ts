@@ -1,3 +1,4 @@
+import { AlertsService } from './../../../providers/alerts.service';
 import { EventoService } from './../../../providers/evento.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Evento } from './../../../models/evento';
@@ -14,6 +15,7 @@ export class EventoEditarPage {
     editaEventoForm: FormGroup;
     
     constructor(
+        public alertsService: AlertsService,
         public eventoService: EventoService,
         public formBuilder: FormBuilder,
         public navCtrl: NavController, 
@@ -30,5 +32,6 @@ export class EventoEditarPage {
       editarEvento(){
         this.eventoService.editCampanha(this.evento);
         this.navCtrl.pop();
+        this.alertsService.showAlert("Evento alterado com sucesso!");
     }
 }

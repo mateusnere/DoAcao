@@ -1,3 +1,4 @@
+import { AlertsService } from './../../../providers/alerts.service';
 import { CampanhaService } from './../../../providers/campanha.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Campanha } from './../../../models/campanha';
@@ -15,6 +16,7 @@ export class CampanhaEditarPage {
     editaCampanhaForm: FormGroup;
 
     constructor(
+        public alertsService: AlertsService,
         public campanhaService: CampanhaService,
         public formBuilder: FormBuilder,
         public navCtrl: NavController, 
@@ -31,6 +33,7 @@ export class CampanhaEditarPage {
     editarCampanha(){
         this.campanhaService.editCampanha(this.campanha);
         this.navCtrl.pop();
+        this.alertsService.showAlert("Campanha alterada com sucesso!");
     }
 
 }

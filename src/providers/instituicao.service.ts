@@ -9,6 +9,8 @@ import * as firebase from 'firebase/app';
 @Injectable()
 export class InstituicaoSevice extends BaseService {
 
+  instituicao: Instituicao;
+
   constructor(
     public angularFireDatabase: AngularFireDatabase,
     public http: Http) {
@@ -28,6 +30,15 @@ export class InstituicaoSevice extends BaseService {
     .map((instituicoes: Instituicao[]) => {
       return instituicoes.length > 0;
     }).catch(this.handleObservableError);
+  }
+
+  isInstituicao(uid: string){
+    this.angularFireDatabase.object(`/instituicoes/${uid}`).valueChanges()
+        .subscribe((instituicao: Instituicao) => {
+          if(instituicao){
+            this.instituicao = instituicao;
+          }
+        });
   }
 
 }

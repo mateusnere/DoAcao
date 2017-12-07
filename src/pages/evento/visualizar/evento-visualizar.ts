@@ -1,3 +1,4 @@
+import { AlertsService } from './../../../providers/alerts.service';
 import { EventoService } from './../../../providers/evento.service';
 import { AlertController } from 'ionic-angular/components/alert/alert-controller';
 import { EventoEditarPage } from './../editar/evento-editar';
@@ -18,6 +19,7 @@ export class EventoVisualizarPage {
     dataApresentacao: string;
 
     constructor(
+        public alertsService: AlertsService,
         public alertCtrl: AlertController,
         public eventoService: EventoService,
         public navCtrl: NavController, 
@@ -42,6 +44,7 @@ export class EventoVisualizarPage {
                     handler: () => {
                         this.eventoService.deleteEvento(this.evento);
                         this.navCtrl.pop();
+                        this.alertsService.showAlert("Evento removido com sucesso!");
                     }
                 },
                 {

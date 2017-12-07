@@ -45,6 +45,7 @@ export class CampanhaVisualizarPage {
                     handler: () => {
                         this.campanhaService.deleteCampanha(this.campanha);
                         this.navCtrl.pop();
+                        this.alertsService.showAlert("Campanha removida com sucesso!");
                     }
                 },
                 {
