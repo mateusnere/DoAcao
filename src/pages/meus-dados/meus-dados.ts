@@ -9,11 +9,11 @@ import { Component } from '@angular/core';
   selector: 'page-meus-dados',
   templateUrl: 'meus-dados.html',
 })
-export class MeusDadosPage {
+export class MeusDadosPage { 
 
   doador: Doador;
   instituicao: Instituicao;
-  isDoador: boolean;
+  isDoador: boolean = false;
 
   constructor(
     public afDatabase: AngularFireDatabase,
@@ -26,17 +26,18 @@ export class MeusDadosPage {
         if(doador){
           this.doador = doador;
           this.isDoador = true;
-        }else{
-          this.afDatabase.object(`/instituicoes/${uid}`).valueChanges()
-          .subscribe((instituicao: Instituicao) => {
-            if(instituicao){
-              this.instituicao = instituicao;
-              this.isDoador = false;
-              console.log(this.instituicao.razaoSocial);
-            }
-          });
         }
-      });
-  }
+       });
+      if(!this.isDoador){
+        this.afDatabase.object(`/instituicoes/${uid}`).valueChanges()
+        .subscribe((instituicao: Instituicao) => {
+          if(instituicao){
+            this.instituicao = instituicao;
+            this.isDoador = false;
+            console.log(this.instituicao.razaoSocial);
+          }
+        });
+      }
+    }
 
 }

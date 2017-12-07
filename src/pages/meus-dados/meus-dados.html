@@ -36,6 +36,30 @@
       </ion-card>
   </div>
   <div *ngIf="!isDoador">
-      oioioi
+    <ion-card>
+      <ion-card-content>
+        <ion-item-group>
+          <ion-item-divider color="secondary">
+            INSTITUICAO
+          </ion-item-divider>
+          <ion-item>{{instituicao.razaoSocial}}</ion-item>
+          <ion-item>{{instituicao.email}}</ion-item>
+        </ion-item-group>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <ion-item-group>
+          <button ion-button full (click)="editarDados()" color="secondary">Editar Dados</button>
+        </ion-item-group>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <ion-item-group>
+          <button ion-button full (click)="removerDoador()" color="danger">Remover Doador</button>
+        </ion-item-group>
+      </ion-card-content>
+    </ion-card>
   </div>
 </ion-content>

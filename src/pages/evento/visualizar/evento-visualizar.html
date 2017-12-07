@@ -1,0 +1,41 @@
+<ion-header>
+        
+    <ion-navbar>
+    <ion-title>Visualizar Evento</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <ion-card>
+        <ion-card-content>
+            <ion-item-group>
+                <ion-item-divider color="secondary">
+                    EVENTO
+                </ion-item-divider>
+                <ion-item>{{evento.nome}}</ion-item>
+                <ion-item>{{evento.local}}</ion-item>
+                <ion-item>{{evento.data}}</ion-item>
+                <ion-item>{{evento.descricao}}</ion-item>
+            </ion-item-group>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-content>
+            <ion-item-group>
+                <button ion-button full (click)="editarEvento()" color="secondary">
+                    Editar Dados
+                </button>
+            </ion-item-group>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-content>
+            <ion-item-group>
+                <button ion-button full (click)="removerEvento()" color="danger">
+                    Remover Evento
+                </button>
+            </ion-item-group>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

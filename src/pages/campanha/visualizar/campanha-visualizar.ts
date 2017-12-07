@@ -1,3 +1,4 @@
+import { CampanhaEditarPage } from './../editar/campanha-editar';
 import { AlertController } from 'ionic-angular/components/alert/alert-controller';
 import { Campanha } from './../../../models/campanha';
 import { CampanhaService } from './../../../providers/campanha.service';
@@ -21,6 +22,10 @@ export class CampanhaVisualizarPage {
         public navParams: NavParams
     ) {
         this.campanha = this.navParams.get('campanhaVisualizar');
+    }
+
+    editarCampanha(){
+        this.navCtrl.push(CampanhaEditarPage, {'campanhaEditar': this.campanha});
     }
 
     removerCampanha(){

@@ -28,4 +28,8 @@ export class CampanhaService extends BaseService{
     return this.afDataBase.object(`/campanhas/${campanha.uid}`).remove().catch(this.handlePromiseError);
   }
 
+  editCampanha(campanha: Campanha){
+    return this.afDataBase.object(`/campanhas/${campanha.uid}`).update(campanha).catch(this.handlePromiseError);
+  }
+
 }

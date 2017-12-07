@@ -1,3 +1,9 @@
+import { EventoService } from './../providers/evento.service';
+import { EventoEditarPage } from './../pages/evento/editar/evento-editar';
+import { EventoVisualizarPage } from './../pages/evento/visualizar/evento-visualizar';
+import { EventoCadastroPage } from './../pages/evento/cadastro/evento-cadastro';
+import { EventoPage } from './../pages/evento/evento';
+import { CampanhaEditarPage } from './../pages/campanha/editar/campanha-editar';
 import { CampanhaVisualizarPage } from './../pages/campanha/visualizar/campanha-visualizar';
 import { CampanhaService } from './../providers/campanha.service';
 import { AlertsService } from './../providers/alerts.service';
@@ -49,6 +55,11 @@ const fireBaseConfig: FirebaseAppConfig = {
     CampanhaPage,
     CampanhaCadastroPage,
     CampanhaVisualizarPage,
+    CampanhaEditarPage,
+    EventoPage,
+    EventoCadastroPage,
+    EventoVisualizarPage,
+    EventoEditarPage,
   ],
   imports: [
     BrowserModule,
@@ -70,6 +81,11 @@ const fireBaseConfig: FirebaseAppConfig = {
     CampanhaPage,
     CampanhaCadastroPage,
     CampanhaVisualizarPage,
+    CampanhaEditarPage,
+    EventoPage,
+    EventoCadastroPage,
+    EventoVisualizarPage,
+    EventoEditarPage,
   ],
   providers: [
     StatusBar,
@@ -79,6 +95,7 @@ const fireBaseConfig: FirebaseAppConfig = {
     AuthService,
     AlertsService,
     CampanhaService,
+    EventoService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

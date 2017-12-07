@@ -1,0 +1,24 @@
+<ion-header>
+        
+    <ion-navbar>
+        <ion-title>Editar Campanha</ion-title>
+    </ion-navbar>    
+</ion-header>
+<ion-content padding>
+    <form [formGroup]="editaCampanhaForm" (ngSubmit)="editarCampanha(); $event.preventDefault()">
+        <ion-item>
+            <ion-icon name="person" item-left></ion-icon>
+            <ion-input [(ngModel)]="campanha.nome" type="text" placeholder="Nome da campanha" maxLength="30" formControlName="nome"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="calendar" item-left></ion-icon>
+            <ion-datetime [(ngModel)]="campanha.data" displayFormat="DD/MM/YYYY" formControlName="data"></ion-datetime>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="lock" item-left></ion-icon>
+            <ion-textarea [(ngModel)]="campanha.descricao" rows="7" placeholder="Descrição" formControlName="descricao"></ion-textarea>
+        </ion-item>
+        <br/>
+        <button ion-button full type="submit" [disabled]="editaCampanhaForm.invalid" color="secondary">Enviar</button>
+    </form>
+</ion-content>

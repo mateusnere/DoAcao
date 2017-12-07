@@ -1,0 +1,34 @@
+<ion-header>
+    
+      <ion-navbar>
+        <ion-title>Eventos de Interação</ion-title>
+      </ion-navbar>
+    
+    </ion-header>
+    
+    
+    <ion-content padding>
+      <ion-card>
+        <ion-card-content>
+          <ion-item-group>
+            <ion-item-divider color="secondary">
+              EVENTOS
+            </ion-item-divider>
+          </ion-item-group>
+          <ion-item-group>
+            <button ion-item *ngFor="let evento of eventos" (click)="visualizarEvento(evento)">
+              {{evento.nome}}
+            </button>
+          </ion-item-group>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-content>
+          <ion-item-group>
+            <button ion-button full (click)="novoEvento()" color="secondary">
+              Novo Evento
+            </button>
+          </ion-item-group>
+        </ion-card-content>
+      </ion-card>
+    </ion-content>

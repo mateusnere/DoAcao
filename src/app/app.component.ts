@@ -1,3 +1,4 @@
+import { EventoPage } from './../pages/evento/evento';
 import { CampanhaPage } from './../pages/campanha/campanha';
 import { HomePage } from './../pages/home/home';
 import { AuthService } from './../providers/auth.service';
@@ -18,7 +19,7 @@ export class MyApp {
   public paginas = [
     {titulo: 'Meus Dados', componente: MeusDadosPage},
     {titulo: 'Campanhas de Arrecadação', componente: CampanhaPage},
-    {titulo: 'Eventos de Interação', componente: 'teste'}
+    {titulo: 'Eventos de Interação', componente: EventoPage}
   ];
 
   constructor(
