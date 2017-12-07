@@ -13,6 +13,10 @@ import { Component } from '@angular/core';
 export class CampanhaVisualizarPage {
 
     campanha: Campanha;
+    dia: string;
+    mes: string;
+    ano: string;
+    dataApresentacao: string;
 
     constructor(
         public alertCtrl: AlertController,
@@ -22,6 +26,10 @@ export class CampanhaVisualizarPage {
         public navParams: NavParams
     ) {
         this.campanha = this.navParams.get('campanhaVisualizar');
+        this.ano = this.campanha.data.substr(0,4);
+        this.mes = this.campanha.data.substr(5,2);
+        this.dia = this.campanha.data.substr(8,2);
+        this.dataApresentacao = `${this.dia}/${this.mes}/${this.ano}`;
     }
 
     editarCampanha(){

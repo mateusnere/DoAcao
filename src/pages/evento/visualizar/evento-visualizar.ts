@@ -12,6 +12,10 @@ import { Component } from '@angular/core';
 export class EventoVisualizarPage {
     
     evento: Evento;
+    dia: string;
+    mes: string;
+    ano: string;
+    dataApresentacao: string;
 
     constructor(
         public alertCtrl: AlertController,
@@ -19,6 +23,10 @@ export class EventoVisualizarPage {
         public navCtrl: NavController, 
         public navParams: NavParams) {
         this.evento = this.navParams.get('eventoVisualizar');
+        this.ano = this.evento.data.substr(0,4);
+        this.mes = this.evento.data.substr(5,2);
+        this.dia = this.evento.data.substr(8,2);
+        this.dataApresentacao = `${this.dia}/${this.mes}/${this.ano}`;
     }
 
     editarEvento(){
